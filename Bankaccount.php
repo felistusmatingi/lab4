@@ -4,29 +4,35 @@ class Bankaccount
     private $AccountNumber;
     private $CustomerName;
     private $Balance;
-
-    function __construct($AccountNumber,$CustomerName,$Balance)
+    function __construct($AccountNumber, $CustomerName, $Balance)
     {
         $this-> setAccountNumber($AccountNumber);
-        $this->setBalance ($Balance);
         $this->setCustomerName($CustomerName);
-    }
-    public function setAccountNumber($NewValue) {
-
-        $this->AccountNumber = $NewValue;
-
-    }
-    public function setCustomerName($NewValue) {
-
-        $this->CustomerName = $NewValue;
-
+        $this->setBalance ($Balance);
     }
 
-    public function setBalance($NewValue) {
+    //return the value
+    public function displayBankaccount()
+    {
 
-        $this->Balance = $NewValue;
+        return "AccountNumber:" . $this->AccountNumber  .
+                "CustomerName:" . $this->CustomerName .
+                "Balance:" . $this->Balance;
 
     }
+    //SET
+    public function setAccountNumber($Value) {
+        $this->AccountNumber = $Value;
+    }
+
+    public function setCustomerName($Value) {
+        $this->CustomerName = $Value;
+    }
+    public function setBalance($Value) {
+        $this->Balance = $Value;
+    }
+
+    //GET
     public function getAccountNumber() {
 
         return $this->AccountNumber;
@@ -42,13 +48,5 @@ class Bankaccount
         return $this->CustomerName;
 
     }
-    //return the value
-    public function displayaccount()
-    {
 
-        return "AccountNumber:" . $this->AccountNumber ;
-        return "CustomerName:" . $this->CustomerName;
-        return "Balance:" . $this->Balance;
-
-    }
 }
